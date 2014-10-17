@@ -33,6 +33,7 @@ public class MainApp {
 					}while(readingError);
 					break;
 				case 3:
+					numUsers = 0;
 					break;
 				case 0:
 					break;

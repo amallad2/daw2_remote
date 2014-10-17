@@ -1,3 +1,6 @@
+import java.io.*;
+
+
 public class User {
 	private int id; 
 	private String name;
@@ -9,6 +12,9 @@ public class User {
 		this.name = name;
 		this.surname = surname;
 		this.age = age;
+	}
+	
+	public User() {
 	}
 
 	public String getName() {
@@ -44,6 +50,38 @@ public class User {
 
 	public String toString(){
 		return "+id: " + this.id + "\n+Name: " + this.name + "\n+Surname: " + this.surname + "\n+age:" + this.age;
+	}
+	
+	public static void main(String argv[]) {
+		try {
+			int id, age; id = age = -1;
+			String name, surname; name = surname = "";
+			boolean readingError;
+			do {
+				try{
+					BufferedReader buffer = 
+								new BufferedReader(
+									new InputStreamReader(System.in));
+					System.out.println("id:");
+					id = Integer.parseInt(buffer.readLine());
+					System.out.println("Name:");
+					name = buffer.readLine();
+					System.out.println("Surname:");
+					surname = buffer.readLine();
+					System.out.println("age:");
+					age = Integer.parseInt(buffer.readLine());
+					readingError = false;
+				}catch(Exception e){
+					System.out.println("Incorrect value!!");
+					readingError = true;
+				}
+			} while(readingError);
+			User u = new User(id, name, surname, age);
+			System.out.println(u.toString());
+			
+		} catch(Exception e) {
+			System.out.println(e.toString());
+		}
 	}
 
 }
