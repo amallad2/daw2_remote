@@ -9,6 +9,8 @@ public class MainApp {
 	 * @param args
 	 */
 	public static void main(String[] args){
+		Interview iv = new Interview();
+
 		int option = showMenu();
 		while(option != 0){
 			switch(option){
