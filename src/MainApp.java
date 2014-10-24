@@ -9,6 +9,7 @@ public class MainApp {
 	 * @param args
 	 */
 	public static void main(String[] args){
+		public award=new Award();
 		int option = showMenu();
 		while(option != 0){
 			switch(option){
