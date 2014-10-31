@@ -1,6 +1,6 @@
 import java.io.*;
 
-
+//editat
 public class User {
 	private int id; 
 	private String name;
